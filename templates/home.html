@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'js/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    {% comment %} GOOGLE FONTS {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Home</title> 
+</head>
+<body id="body" class="position-relative">
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-light">
+    <div class="container-lg">
+  <div class="container">
+    <a class="navbar-brand " href="#">Easy-Transport</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-2">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Incio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Conocenos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contactanos</a>
+        </li>
+      </ul>
+  </div>
+  </div>
+</nav>
+<section class="hero bg-grey d-flex py-6">
+    <div class="container align-self-center">
+      <div class="text-center w-75 mx-auto mb-5">
+        <h1 class="display-4 mb-3">Somos expertos en <span class="font-weight-bold">la optimizacion y calidad en el transporte</span></h1>
+        <p class="lead text-muted mb-5">Creamos esta Web para ayudarte a mejorar tu experiencia en el sistema de transporte</p>
+        <a href="#" class="btn btn-dark mr-2 mb-4">Apoyanos</a>
+        <a href="#" class="btn btn-outline-dark mb-4">Contáctanos ahora</a>
+      </div>
+      <button type="button" data-toggle="modal" data-target="#exampleModal" class="position-relative d-flex justify-content-center align-items-center border-0 p-0" onclick="showVideo()">
+        <div class="play-icon position-absolute  d-flex align-self-center">
+          <i class="icon ion-md-play text-red align-self-center mx-auto">Easy-Transport</i>
+        </div>
+        <img src="{% static 'img/inicio.jpg'%}" class="img-fluid w">
+      </button>
+    </div>
+  </section>  
+<section class="py-6 bg-light">
+    <div class="container">
+      <h2 class="mb-0">Nuestro equipo</h2>
+      <p class="lead text-muted mb-5">Nuestro objetivo es gestionar y mejorar el tiempo de espera para los usuarios.</p>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="my-3">
+        <div class="position-absolute member-info text-light">
+          <h6 class="mb-0">Diego Velázquez</h6>
+          <small>Diseñador UI / UX</small>
+        </div>
+        <img src="{%static 'img/tras.jpeg' %}" class="img-fluid" alt="https://unsplash.com/@brokenlenscap">
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="my-3">
+        <div class="position-absolute member-info text-light">
+          <h6 class="mb-0">Cristian Palacios</h6>
+          <small>Desarrollador Backend</small>
+        </div>
+        <img src="{%static 'img/tras1.jpeg' %}" class="img-fluid" alt="img">
+        </div>
+      </div>
+      <div class="col-lg-4 d-flex">
+        <div class="align-self-center my-3">
+        <h2 class="mb-4">Quienes somos?</h2>
+          <p class="text-muted mb-4">Somos un equipo que garantiza un servicio público de transporte confiable, para mejorar la calidad de vida y la competitividad de la ciudad, mediante un sistema troncoalimentado integralmente seguro, que alcance tiempos óptimos de desplazamiento, y que responda a las condiciones naturales y culturales de la ciudad.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="py-6 bg-light">
+    <div class="container">
+      <h2 class="mb-0">Noticias recientes</h2>
+      <p class="lead text-muted mb-5">Los mejores artículos de la industria</p>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card border-0 rounded-0 bg-grey my-3">
+            <div class="card-header d-flex border-0 bg-grey p-4">
+              <div class="mr-2">
+                <img src="assets/img/user-1.png" class="img-fluid rounded-circle user">
+              </div>
+              <div class="align-self-center">
+                <small class="d-block">Publicado por <span class="font-weight-bold">Santiago Reyes</span></small>
+                <small class="d-block">6 de Abril, 2020</small>
+              </div>
+            </div>
+            <div class="card-body p-4">
+              <small class="d-block mb-3">Emprendimiento - 4 min lectura</small>
+              <h4>Como reducir los costos de envío para Startups</h4>
+            </div>
+            <div class="card-footer border-0 bg-grey p-4">
+              <a href="" class="text-dark"><small>Leer más</small> <i class="icon ion-md-arrow-forward align-middle ml-2"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card border-0 rounded-0 bg-grey my-3">
+            <div class="card-header d-flex border-0 bg-grey p-4">
+              <div class="mr-2">
+                <img src="assets/img/user-1.png" class="img-fluid rounded-circle user">
+              </div>
+              <div class="align-self-center">
+                <small class="d-block">Publicado por <span class="font-weight-bold">Santiago Reyes</span></small>
+                <small class="d-block">12 de Abril, 2020</small>
+              </div>
+            </div>
+            <div class="card-body p-4">
+              <small class="d-block mb-3">Emprendimiento - 4 min lectura</small>
+              <h4>Estrategias para generar ingresos a corto plazo</h4>
+            </div>
+            <div class="card-footer border-0 bg-grey p-4">
+              <a href="" class="text-dark"><small>Leer más</small> <i class="icon ion-md-arrow-forward align-middle ml-2"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card border-0 rounded-0 bg-grey my-3">
+            <div class="card-header d-flex border-0 bg-grey p-4">
+              <div class="mr-2">
+                <img src="assets/img/user-1.png" class="img-fluid rounded-circle user">
+              </div>
+              <div class="align-self-center">
+                <small class="d-block">Publicado por <span class="font-weight-bold">Santiago Reyes</span></small>
+                <small class="d-block">18 de Abril, 2020</small>
+              </div>
+            </div>
+            <div class="card-body p-4">
+              <small class="d-block mb-3">Emprendimiento - 4 min lectura</small>
+              <h4>Como hacer tu primer venta en línea en 15 días</h4>
+            </div>
+            <div class="card-footer border-0 bg-grey p-4">
+              <a href="" class="text-dark"><small>Leer más</small> <i class="icon ion-md-arrow-forward align-middle ml-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
