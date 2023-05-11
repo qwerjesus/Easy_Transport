@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'js/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
     {% comment %} GOOGLE FONTS {% endcomment %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,10 +30,13 @@
           <a class="nav-link active" aria-current="page" href="#">Incio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Conocenos</a>
+          <a class="nav-link" href="#conocenos">Conocenos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contactanos</a>
+          <a class="nav-link" href="#footer">Contactanos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Noticias">Noticias</a>
         </li>
       </ul>
   </div>
@@ -45,7 +48,7 @@
         <h1 class="display-4 mb-3">Somos expertos en <span class="font-weight-bold">la optimizacion y calidad en el transporte</span></h1>
         <p class="lead text-muted mb-5">Creamos esta Web para ayudarte a mejorar tu experiencia en el sistema de transporte</p>
         <a href="#" class="btn btn-dark mr-2 mb-4">Apoyanos</a>
-        <a href="#" class="btn btn-outline-dark mb-4">Contáctanos ahora</a>
+        <a href="#footer" class="btn btn-outline-dark mb-4">Contáctanos ahora</a>
       </div>
       <button type="button" data-toggle="modal" data-target="#exampleModal" class="position-relative d-flex justify-content-center align-items-center border-0 p-0" onclick="showVideo()">
         <div class="play-icon position-absolute  d-flex align-self-center">
@@ -55,26 +58,18 @@
       </button>
     </div>
   </section>  
-<section class="py-6 bg-light">
+<section class="py-6 bg-light" id = "conocenos">
     <div class="container">
       <h2 class="mb-0">Nuestro equipo</h2>
       <p class="lead text-muted mb-5">Nuestro objetivo es gestionar y mejorar el tiempo de espera para los usuarios.</p>
     <div class="row">
       <div class="col-lg-4">
         <div class="my-3">
-        <div class="position-absolute member-info text-light">
-          <h6 class="mb-0">Diego Velázquez</h6>
-          <small>Diseñador UI / UX</small>
-        </div>
         <img src="{%static 'img/tras.jpeg' %}" class="img-fluid" alt="https://unsplash.com/@brokenlenscap">
         </div>
       </div>
       <div class="col-lg-4">
         <div class="my-3">
-        <div class="position-absolute member-info text-light">
-          <h6 class="mb-0">Cristian Palacios</h6>
-          <small>Desarrollador Backend</small>
-        </div>
         <img src="{%static 'img/tras1.jpeg' %}" class="img-fluid" alt="img">
         </div>
       </div>
@@ -88,7 +83,7 @@
     </div>
   </section>
 
-  <section class="py-6 bg-light">
+  <section class="py-6 bg-light" id="Noticias">
     <div class="container">
       <h2 class="mb-0">Noticias recientes</h2>
       <p class="lead text-muted mb-5">Los mejores artículos de la industria</p>
@@ -156,6 +151,42 @@
       </div>
     </div>
   </section>
-
+  <footer class="bg-light " id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="mb-5">
+            <h6 class="mb-0">Ubicación de las oficinas</h6>
+            <small class="text-muted">Paseo de la Reforma 296</small>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="mb-5">
+            <h6 class="mb-0">Teléfono de contacto</h6>
+            <small class="text-muted">+55 2882 2928</small>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="mb-5">
+            <h6 class="mb-0">Email de contacto</h6>
+            <small class="text-muted">hola@webook.mx</small>
+          </div>
+        </div>
+      </div>
+      <div class="row border-top py-4">
+        <div class="col-lg-6">
+          <small><span class="font-weight-bold">© 2023 Easy-Transport.</span> Creado por Grupo #1</small>
+        </div>
+        <div class="col-lg-6 text-right">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-4"><a href="#" class="text-dark lead"><i class="icon ion-logo-instagram"></i></a></li>
+            <li class="list-inline-item mr-4"><a href="#" class="text-dark lead"><i class="icon ion-logo-facebook"></i></a></li>
+            <li class="list-inline-item mr-4"><a href="#" class="text-dark lead"><i class="icon ion-logo-linkedin"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="text-dark lead"><i class="icon ion-logo-twitter"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      </div>
+    </footer>
 </body>
 </html>
