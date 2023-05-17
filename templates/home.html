@@ -1,47 +1,6 @@
+{% extends 'layouts/nav.html' %} 
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
-    {% comment %} GOOGLE FONTS {% endcomment %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;700&display=swap" rel="stylesheet">
-    <title>Home</title> 
-</head>
-<body id="body" class="position-relative">
-<nav class="navbar navbar-expand-lg bg-body-tertiary bg-light">
-    <div class="container-lg">
-  <div class="container">
-    <a class="navbar-brand " href="#">Easy-Transport</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-2">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Incio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#conocenos">Conocenos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#footer">Contactanos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#Noticias">Noticias</a>
-        </li>
-      </ul>
-  </div>
-  </div>
-</nav>
+{% block content %}
 <section class="hero bg-grey d-flex py-6">
     <div class="container align-self-center">
       <div class="text-center w-75 mx-auto mb-5">
@@ -151,9 +110,37 @@
       </div>
     </div>
   </section>
-  <footer class="bg-light " id="footer">
+  <section class="bg-grey py-6">
     <div class="container">
-      <div class="row">
+        <div class="w-75 mx-auto text-center">
+          <h2 class="mb-0">Es momento de empezar tu proyecto</h2>
+          <p class="lead text-muted mb-4">No pierdas la oportunidad de posicionar a tu marca.</p>
+          <a href="#" class="btn btn-dark mx-1 mb-4">Agenda una demo</a>
+          <a href="#" class="btn btn-outline-dark mx-1 mb-4">Contáctanos ahora</a>
+        </div>
+    </div>
+  </section>
+  <section class="bg-light border-top">
+    <div class="row no-gutters">
+      <div class="col-lg-3 col-md-12 text-center py-4 border-right border-bottom">
+        <small><a href="" class="text-dark"><i class="icon ion-logo-instagram mr-3 align-middle lead"></i> Instagram</a></small>
+      </div>
+      <div class="col-lg-3 col-md-12 text-center py-4 border-right border-bottom">
+        <small><a href="" class="text-dark"><i class="icon ion-logo-facebook mr-3 align-middle lead"></i> Facebook</a></small>
+      </div>
+      <div class="col-lg-3 col-md-12 text-center py-4 border-right border-bottom">
+        <small><a href="" class="text-dark"><i class="icon ion-logo-linkedin mr-3 align-middle lead"></i> LinkedIn</a></small>
+      </div>
+      <div class="col-lg-3 col-md-12 text-center py-4 border-bottom">
+        <small><a href="" class="text-dark"><i class="icon ion-logo-twitter mr-3 align-middle lead"></i> Twitter</a></small>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-light" id="footer">
+    <div class="container">
+      <div class="row border-top py-4">
+        <div class="col-lg-6">
+          <div class="row">
         <div class="col-lg-4">
           <div class="mb-5">
             <h6 class="mb-0">Ubicación de las oficinas</h6>
@@ -173,9 +160,7 @@
           </div>
         </div>
       </div>
-      <div class="row border-top py-4">
-        <div class="col-lg-6">
-          <small><span class="font-weight-bold">© 2023 Easy-Transport.</span> Creado por Grupo #1</small>
+          <small><span class="font-weight-bold">© 2020 Webook.</span> Creado por <a href="https://webook.mx/" class="text-dark" target="_blank">webook.mx</a></small>
         </div>
         <div class="col-lg-6 text-right">
           <ul class="list-inline mb-0">
@@ -186,7 +171,6 @@
           </ul>
         </div>
       </div>
-      </div>
-    </footer>
-</body>
-</html>
+    </div>
+  </footer>
+{% endblock %}
