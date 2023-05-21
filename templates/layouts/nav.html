@@ -39,12 +39,19 @@
             <li class="nav-item">
               <a class="nav-link" href="#conocenos">Conocenos</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#footer">Contactanos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#Noticias">Noticias</a>
-            </li>
+
+            {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="">Salir</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="#footer">Contactanos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Noticias">Noticias</a>
+              </li>
+            {% endif %}
           </ul>
       </div>
       </div>
