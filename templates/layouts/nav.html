@@ -33,18 +33,26 @@
       </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-2">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Incio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#conocenos">Conocenos</a>
-            </li>
-
             {% if user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link" href="">Salir</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'routes' %}">Rutas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'blog' %}">Comentarios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Salir</a>
               </li>
               {% else %}
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href={% url 'index' %}>Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#conocenos">Conocenos</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#footer">Contactanos</a>
               </li>
@@ -61,6 +69,6 @@
     {% endblock %} 
     <script type="text/javascript" src="{% static 'js/popper.min.js'%}"></script>    
     <script type="text/javascript" src="{% static 'js/jquery.js'%}"></script>    
-    <script type="text/javascript" src="{% static 'js/bootstrap.min.js'%}"></script>    
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js'%}"></script> 
 </body>
 </html>

@@ -72,12 +72,8 @@ button:focus {
     background: linear-gradient(180deg,var(--grey) 70%,var(--light) 0);
 }
 
-.play-icon {
-    width: 5rem;
-    height: 5rem;
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, .5);
-    animation: pulse 1.5s infinite;
-}
+
+
 
 /* ///////////
    About us
@@ -96,4 +92,26 @@ button:focus {
     max-width: 50px;
 }
 
+/* ///////////
+   Responsive 
+/////////// */
 
+@media (max-width: 768px) { 
+    .modal-dialog {
+        max-width: 500px;
+    }
+}
+@media (max-width: 575.98px) { 
+    .w-75 {
+        width: 100% !important;
+    }
+    .display-4 {
+        font-size: 2.4rem;
+    }
+    .btn {
+        width: 100%;
+    }
+    .text-right {
+        text-align: center !important;
+    }
+}

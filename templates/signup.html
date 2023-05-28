@@ -1,0 +1,30 @@
+{% extends 'layouts/nav.html' %}
+
+{% block  content %}
+<section class='container'>
+<div class='row col-md-4 offset-md-4 mt-4'>
+    <form method= 'POST' class='card card-body text-center'>
+      <h1>Signup</h1>
+      <span>{{error}}</span>
+        {% csrf_token %}
+        <div class='mb-3'>
+          <label for='username'>Nombre de usuario</label>
+          <input class='form-control' type='text' placeholder='Ingresa el nombre de usuario' name='username' id='username'>
+        </div>
+        <div class='mb-3'>
+          <label for='mail'>Correo Electronico</label>
+          <input class='form-control' type='email' placeholder='Ingresa mail' name='mail' id='mail'>
+        </div>
+        <div class='mb-3'>
+          <label for='password'>Contrasena</label>
+          <input class='form-control' type='password' placeholder='Ingresa la Contrasena' name='password1' id='password'>
+        </div>
+        <div class='mb-3'>
+          <label for='password2'>Confirma la contrasena</label>
+          <input class='form-control' type='password' placeholder='Ingresa nuevamente la contrasena' name='password2' id='password2'>
+        </div>
+        <button class='btn btn-outline-primary' type="submit">signup</button>
+    </form>
+</div>
+</section>
+{% endblock %}

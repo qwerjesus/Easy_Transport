@@ -1,0 +1,25 @@
+{% extends 'layouts/nav.html' %}
+
+{% block content %}
+
+<section class='container'>
+    <div class='row col-md-4 offset-md-4 mt-4'>
+        <form method='POST' class='card card-body'>
+            <h1 class=' text-center'>Sign In</h1>
+            <span >{{error}}</span>
+            {% csrf_token %}
+            <div class='mb-3'>
+                <label for='username'>Username</label>
+                <input class='form-control' type='text' placeholder='Ingresa el nombre de usuario' name='username' id='username'>
+            </div>
+            <div class='mb-3'>
+                <label for='password'>Password</label>
+                <input class='form-control' type='password' placeholder='Ingresa la Contrasena' name='password1' id='password'>
+            </div>
+             <button  type="submit" class='btn btn-outline-primary'>Signin</button>
+        </form>
+    </div>
+</section>
+{% endblock  %}
+
+

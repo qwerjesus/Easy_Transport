@@ -1,0 +1,59 @@
+{% extends 'layouts/nav.html' %}
+{% load static %}
+{% block content %}
+<div class='container mt-5'>
+    <div class='row'>
+        <div class='col-md-4'>
+            <h3 class='header' >Routes</h3>
+            <p>Rutas que actualmente se manejan</p>
+
+            <ol class="list-group">
+
+              {% for route in Routes  %}
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">{{route.name}}</div>
+                  {{route.addres}}
+                  </div>
+                </li>
+              {% endfor %}
+              </ol>
+        </div>
+        <div class='col-md-8'>
+            {{map|safe}}
+        </div>
+    </div>
+    <br>
+    <div class='row'>
+            <div class="col-md-4 mt-5">
+              <img src="{% static 'img/transcaribe.jpg' %}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <form method='POST' class='card card-body'>
+                <h1 class='card-title'>Configurar Notificaciones</h1>
+                <span >{{error}}</span>
+                {% csrf_token %}
+                <div class='mb-3 card-text'>
+                    <label for='username'>Nombre de la ruta</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>{{route.name}}</option>
+                      {% for route in Routes %}
+                        <option value="1">{{route.name}}</option>
+                      {% endfor %}
+                    </select>
+                </div>
+                <div class='mb-3 card-text'>
+                    <label for='Email'>Email</label>
+                    <input class='form-control' type='Email' placeholder='Ingrese el correo' name='Email' id='Email'>
+                </div>
+                <div class='mb-3 card-text'>
+                  <label for='Interval'>Intervalo de notificacion en minutos</label>
+                  <input class='form-control' type='number' name='Interval' id='Interval'>
+              </div>
+                 <button  type="submit" class='btn btn-outline-primary'>Aceptar</button>
+            </form>
+          </div>
+        </div>  
+      </div>
+
+{% endblock  %}
