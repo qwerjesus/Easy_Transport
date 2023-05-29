@@ -1,0 +1,40 @@
+{% extends 'layouts/nav.html' %}
+{% load static %}
+{% block content %}
+<div class='container mt-5'>
+  <div class='row'>
+      <div class='col-md-10  text-center'>
+        <img src="{% static 'img/Easytransport.jpg' %}" alt="Easy Transport Logo" class='header mb-3 img-thumbnail' width='123px' height='120px'>
+        
+          <form method= 'POST' class='card card-body'>
+            {% csrf_token %}
+            <h3  >Configura tus notificaciones</h3>
+           
+            <div class='mb-3'>
+              <label for='rutas'>Elige la ruta o estacion</label>
+              <select class="form-select" aria-label="Default select example" name='rutas' id='rutas'>
+                {% comment %} <option selected>elija una ruta</option> {% endcomment %}
+                {% for route in routes %}
+                  <option  selected value={{route.name}}>{{route.name}}</option>
+                {% endfor %}
+              </select>
+            </div>
+              {% comment %} <div class='mb-3'>
+                <label for='mail'>Correo Electronico</label>
+                <input class='form-control' type='email' placeholder='Ingresa mail' name='email' id='mail'>
+              </div> {% endcomment %}
+              <div class='row'>
+              <div class="col-sm-7">
+                <input type="Number" class="form-control" placeholder="numero de veces a notificar" aria-label="number" name='countTime'>
+              </div>
+              <div class="col-sm">
+                <input type="number" class="form-control" placeholder="Cada cuantos minutos" aria-label="State" name='time'>
+              </div>  
+            </div>              
+              <button class='btn btn-outline-primary' type="submit">notificar</button>
+          </form>
+
+      </div>
+  </div>
+</div>
+{% endblock  %}

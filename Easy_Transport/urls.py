@@ -25,5 +25,6 @@ urlpatterns = [
     path('/logout', views.signout, name='logout'),
     path('/signup', views.signup, name='signup'),  
     path('/routes', include('Routes.urls')),
-    path('/blog', include('blog.urls'))
+    path('/blog', include('blog.urls')),
+    path('/notifications', include('notifications.urls'))
 ]
