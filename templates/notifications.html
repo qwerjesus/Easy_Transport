@@ -12,12 +12,18 @@
            
             <div class='mb-3'>
               <label for='rutas'>Elige la ruta o estacion</label>
-              <select class="form-select" aria-label="Default select example" name='rutas' id='rutas'>
+              {% comment %} <select class="form-select" aria-label="Default select example"  id='rutas' name='rutas'> {% endcomment %}
                 {% comment %} <option selected>elija una ruta</option> {% endcomment %}
-                {% for route in routes %}
-                  <option  selected value={{route.name}}>{{route.name}}</option>
-                {% endfor %}
-              </select>
+                {% comment %} {% for route in routes %} {% endcomment %}
+                  {% comment %} <option  selected value={{route.name}} name='rutas'>{{route.name}}</option> {% endcomment %}
+                {% comment %} {% endfor %} {% endcomment %}
+              {% comment %} </select> {% endcomment %}
+              <input list="rutass" id="mirutas" name="rutas">
+              <datalist id="rutass">
+                {% for route in routes %} 
+                  <option value={{route.name}}>
+                {% endfor %} 
+            </datalist>
             </div>
               {% comment %} <div class='mb-3'>
                 <label for='mail'>Correo Electronico</label>
@@ -25,7 +31,7 @@
               </div> {% endcomment %}
               <div class='row'>
               <div class="col-sm-7">
-                <input type="Number" class="form-control" placeholder="numero de veces a notificar" aria-label="number" name='countTime'>
+                <input type="number" class="form-control" placeholder="numero de veces a notificar" aria-label="number" name='countTime'>
               </div>
               <div class="col-sm">
                 <input type="number" class="form-control" placeholder="Cada cuantos minutos" aria-label="State" name='time'>
