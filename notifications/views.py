@@ -10,19 +10,33 @@ from plyer import notification
 routes = Location.objects.all()
 
 # notificacion
-def enviarnotificacion(mensaje):
+def enviarnotificacion(mensaje, title):
     notification.notify(
-        title = "Recordatorio",
+        title = title,
         message = mensaje,
         timeout = 10
     )
 
-def repetir(func, time, veces, mensaje):
-    
-    while time>0:
-        func(mensaje)
-        time-=1
-        sleep(veces)
+def repetir(time, veces, titulo):
+    s = 12
+    a = 9
+    wq = a/(s*(s-a)) #tiempo de espera
+    cwq = wq*60
+    count_time = 0
+    total = time*veces
+    while total>0:
+
+        if cwq>time:
+            t = cwq - count_time
+            mensaje = f' falta aun {t} minutos para que llegue el bus de transcaribe en {titulo}'
+
+            enviarnotificacion(mensaje, titulo)
+
+            total-=time
+            count_time=time
+            sleep(time)
+            continue
+        else: break
 
 # Create your views here.
 
@@ -31,10 +45,12 @@ def notificications(request):
     if request.method == 'POST':
 
         
-        message = f"""{request.POST['rutas']} """
+        titulo = request.POST['rutas']
+        tiempo = int(request.POST['time'])
+        veces = int(request.POST['countTime'])
 
         
-        # repetir(enviarnotificacio,)
+        repetir(tiempo, veces, titulo)
         
         return render(request, 'notifications.html',{
             'routes': routes
@@ -43,6 +59,5 @@ def notificications(request):
     return render(request, 'notifications.html',{
             'routes': routes
             })
-
 
 
